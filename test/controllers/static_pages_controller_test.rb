@@ -18,7 +18,8 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get static_pages_home_url
     assert_response :success
     #セレクタ "title" の値のテスト
-    assert_select "title", "Home | #{@baase_title}"
+    #assert_select "title", "Home | #{@baase_title}"
+    assert_select "title", "Ruby on Rails Tutorial Sample App"
   end
 
   test "should get help" do
