@@ -12,35 +12,24 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
-  test "should get home" do
-    # Homeページのテスト 
-    # GETリクエストをhomeアクションに対して送信
-    get static_pages_home_url
-    assert_response :success
-    #セレクタ "title" の値のテスト
-    #assert_select "title", "Home | #{@baase_title}"
-    assert_select "title", "Ruby on Rails Tutorial Sample App"
-  end
-
   test "should get help" do
-    get static_pages_help_url
+    get help_url
     assert_response :success
     #セレクタ "title" の値のテスト
     assert_select "title", "Help | #{@baase_title}"
   end
   
   test "should get about" do
-    get static_pages_about_url
+    get about_url
     assert_response :success
     #セレクタ "title" の値のテスト
     assert_select "title", "About | #{@baase_title}"
   end
   
   test "should get contact" do
-    get static_pages_contact_url
+    get contact_url
     assert_response :success
     #セレクタ "title" の値のテスト
     assert_select "title", "Contact | #{@baase_title}"
   end
-
 end
