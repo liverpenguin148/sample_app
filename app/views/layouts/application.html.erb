@@ -2,14 +2,23 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>    
+    <!--layouts/_rails_default.html.erbを呼ぶ-->
     <%= render 'layouts/rails_default' %>
+    <!--layouts/_shim.html.erbを呼ぶ-->
     <%= render 'layouts/shim' %>
   </head>
   <body>
+    <!--layouts/_header.erbを呼ぶ-->
     <%= render 'layouts/header' %>
     <div class="container">
+      <!-- message_typeには、successかdangerが入る-->
+      <% flash.each do |message_type,message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
+      <!--デバッグ情報は開発環境(development)だけで表示-->
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
