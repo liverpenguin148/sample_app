@@ -8,6 +8,8 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 #bootstrap
 gem 'bootstrap-sass'
 # Use mysql as the database for Active Record
+# Use jQuery
+gem 'jquery-rails'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

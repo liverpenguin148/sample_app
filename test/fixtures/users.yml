@@ -1,0 +1,5 @@
+# ユーザーログインのテストで使うfixture
+taka:
+  name: Taka Example
+  email: taka@example.com
+  password_digest: <%= User.digest('password') %>

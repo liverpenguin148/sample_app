@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      # ユーザー登録でログインする(セッションにidを渡す。)
+      log_in @user
+      # flashメッセージの表示(success)
       flash[:success] = "Welcome to the Sample App!"
       # @userによって、該当するuser_idのページへ遷移
       redirect_to @user
