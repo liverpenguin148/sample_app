@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'faker','1.7.3'
+gem 'will_paginate','3.1.7'
+gem 'bootstrap-will_paginate','1.0.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -63,7 +66,7 @@ group :test do
   gem 'rails-controller-testing', '1.0.2'
   gem 'minitest',                 '5.14.0'
   gem 'minitest-reporters',       '1.1.14'
-  gem 'guard',                    '2.13.0'
+  gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.4'
 end
 

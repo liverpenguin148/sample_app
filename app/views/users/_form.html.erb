@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, url: yield(:url)) do |f| %>
+      <!--shared/_error_messages.html.erbを呼ぶ-->
+      <%= render 'shared/error_messages', object: @user %>
+      
+      <!-- Railsは無効な内容の送信後,元のページに戻ると、         -->
+      <!-- エラー箇所をdivタグ「field_with_errors」で自動的に囲む -->
+      <%= f.label :name %>
+      <%= f.text_field :name, class:'form-control' %>
+      
+      <%= f.label :email %>
+      <%= f.email_field :email, class:'form-control' %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password, class:'form-control' %>
+      
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class:'form-control' %>
+      
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -13,10 +13,10 @@ class SessionsController < ApplicationController
       # sessionのremember_meが "1" の場合、remember(user)、そうでない場合、forget(user)
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       # ランダムなトークンを作成、その値をハッシュ化した値(記憶ダイジェスト)をDB保存
-      redirect_to user
+      redirect_back_or user
     else
       #flash.now：次のアクションに移行した時点で消える
-      flash.now[:danger] = "Invalid email/password combination"
+      flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
     end
   end
